@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0
  */
 @SpringBootApplication(scanBasePackages = {"com.treasuremountain.mango"})
-@MapperScan("com.baomidou.mybatisplus.samples.quickstart.mapper")
+@MapperScan("com.treasuremoutain.mango.dao")
 public class MangoApplication {
 
 	public static void main(String[] args) {
