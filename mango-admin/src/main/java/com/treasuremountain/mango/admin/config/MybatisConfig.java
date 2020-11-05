@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @date 2020/10/27 8:37
  */
 @Configuration
-@MapperScan("com.treasuremountain.mango.**.dao")
+@MapperScan("com.treasuremountain.mango.admin.**.dao")
 public class MybatisConfig {
 
     @Autowired
@@ -28,7 +28,7 @@ public class MybatisConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource);
-        sessionFactory.setTypeAliasesPackage("com.treasuremountain.mango.**.model");
+        sessionFactory.setTypeAliasesPackage("com.treasuremountain.mango.admin.**.model");
 
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 
