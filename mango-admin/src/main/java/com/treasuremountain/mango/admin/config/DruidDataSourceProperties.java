@@ -5,9 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * druid数据库自定义配置
  *
- * @author  mengyuanming
- * @date  2020/11/01 6:36
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/11/01 6:36
  */
 @ConfigurationProperties(prefix = "spring.datasource.druid")
 public class DruidDataSourceProperties {

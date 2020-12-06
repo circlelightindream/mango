@@ -2,10 +2,14 @@ package com.treasuremountain.mango.admin.dao;
 
 import com.treasuremountain.mango.admin.model.SysConfig;
 import com.treasuremountain.mango.admin.model.SysConfigExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SysConfigMapper {
     long countByExample(SysConfigExample example);
 

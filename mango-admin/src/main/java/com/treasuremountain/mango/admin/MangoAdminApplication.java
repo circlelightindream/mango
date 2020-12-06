@@ -7,16 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 启动
  *
- * @author  mengyuanming
- * @date  2020/10/28 6:34
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/10/28 6:34
  */
 @SpringBootApplication(scanBasePackages = {"com.treasuremountain.mango.admin"})
 @MapperScan("com.treasuremoutain.mango.admin.dao")
 public class MangoAdminApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MangoAdminApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MangoAdminApplication.class, args);
+    }
 
 }

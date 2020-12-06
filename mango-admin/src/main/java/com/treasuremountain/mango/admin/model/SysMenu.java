@@ -2,8 +2,9 @@ package com.treasuremountain.mango.admin.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-public class SysMenu implements Serializable {
+public class SysMenu {
     private Long id;
 
     private String name;
@@ -30,7 +31,47 @@ public class SysMenu implements Serializable {
 
     private Byte delFlag;
 
+
+    /**
+     * 非数据库字段
+     */
+    private String parentName;
+
+    /**
+     * 非数据库字段
+     */
+    private Integer level;
+
+    /**
+     * 非数据库字段
+     */
+    private List<SysMenu> children;
+
     private static final long serialVersionUID = 1L;
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public List<SysMenu> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<SysMenu> children) {
+        this.children = children;
+    }
 
     public Long getId() {
         return id;

@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * hello mango
  *
- * @author  mengyuanming
- * @date  2020/10/27 6:11
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/10/27 6:11
  */
 @RestController
 public class HelloController {

@@ -120,6 +120,13 @@
             <version>1.7.25</version>
         </dependency>
 
+        <!-- mango-core-->
+        <dependency>
+            <groupId>com.treasuremountain</groupId>
+            <artifactId>mango-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
     <build>

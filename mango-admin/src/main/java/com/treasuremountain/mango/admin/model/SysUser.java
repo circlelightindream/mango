@@ -1,7 +1,9 @@
 package com.treasuremountain.mango.admin.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class SysUser implements Serializable {
     private Long id;
@@ -35,6 +37,15 @@ public class SysUser implements Serializable {
     private Byte delFlag;
 
     private static final long serialVersionUID = 1L;
+
+    // 非数据库字段
+    private String deptName;
+
+    // 非数据库字段
+    private String roleName;
+
+    // 非数据库字段
+    private List<SysUserRole> userRoles = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -156,28 +167,27 @@ public class SysUser implements Serializable {
         this.delFlag = delFlag;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", nickName=").append(nickName);
-        sb.append(", avatar=").append(avatar);
-        sb.append(", password=").append(password);
-        sb.append(", salt=").append(salt);
-        sb.append(", email=").append(email);
-        sb.append(", mobile=").append(mobile);
-        sb.append(", status=").append(status);
-        sb.append(", deptId=").append(deptId);
-        sb.append(", createBy=").append(createBy);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", lastUpdateBy=").append(lastUpdateBy);
-        sb.append(", lastUpdateTime=").append(lastUpdateTime);
-        sb.append(", delFlag=").append(delFlag);
-        sb.append("]");
-        return sb.toString();
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public List<SysUserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(List<SysUserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }

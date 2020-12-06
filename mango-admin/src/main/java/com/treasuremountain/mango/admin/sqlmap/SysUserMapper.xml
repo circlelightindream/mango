@@ -354,20 +354,20 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.treasuremountain.mango.admin.model.SysUser">
         update sys_user
-        set name             = #{name,jdbcType=VARCHAR},
-            nick_name        = #{nickName,jdbcType=VARCHAR},
-            avatar           = #{avatar,jdbcType=VARCHAR},
-            password         = #{password,jdbcType=VARCHAR},
-            salt             = #{salt,jdbcType=VARCHAR},
-            email            = #{email,jdbcType=VARCHAR},
-            mobile           = #{mobile,jdbcType=VARCHAR},
-            status           = #{status,jdbcType=TINYINT},
-            dept_id          = #{deptId,jdbcType=BIGINT},
-            create_by        = #{createBy,jdbcType=VARCHAR},
-            create_time      = #{createTime,jdbcType=TIMESTAMP},
-            last_update_by   = #{lastUpdateBy,jdbcType=VARCHAR},
-            last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
-            del_flag         = #{delFlag,jdbcType=TINYINT}
+        set name = #{name,jdbcType=VARCHAR},
+        nick_name = #{nickName,jdbcType=VARCHAR},
+        avatar = #{avatar,jdbcType=VARCHAR},
+        password = #{password,jdbcType=VARCHAR},
+        salt = #{salt,jdbcType=VARCHAR},
+        email = #{email,jdbcType=VARCHAR},
+        mobile = #{mobile,jdbcType=VARCHAR},
+        status = #{status,jdbcType=TINYINT},
+        dept_id = #{deptId,jdbcType=BIGINT},
+        create_by = #{createBy,jdbcType=VARCHAR},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        last_update_by = #{lastUpdateBy,jdbcType=VARCHAR},
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+        del_flag = #{delFlag,jdbcType=TINYINT}
         where id = #{id,jdbcType=BIGINT}
     </update>
     <select id="selectByExampleWithRowbounds" parameterType="com.treasuremountain.mango.admin.model.SysUserExample"
@@ -389,6 +389,31 @@
         select
         <include refid="Base_Column_List"/>
         from sys_user
+    </select>
+
+    <select id="findPage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user
+    </select>
+
+    <select id="findByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName from sys_user u
+        where u.name = ${name, jdbcType = VARCHAR}
+    </select>
+
+    <select id="findPageByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <bind name="pattern" value="'%' + _parameter.name + '%'"/>
+        select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName from sys_user u
+        where u.name like #{pattern}
+    </select>
+
+    <select id="findPageByNameAndEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <bind name="patternName" value="'%' + _parameter.name + '%'"/>
+        <bind name="patternEmail" value="'%' + _parameter.email + '%'"/>
+        select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName from sys_user u
+        where u.name like #{patternName}
+        and u.email like #{patternEmail}
     </select>
 
 </mapper>
