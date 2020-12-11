@@ -28,7 +28,7 @@ public class FileUtils {
             BufferedInputStream bis = new BufferedInputStream(is);
             int length = 0;
             byte[] temp = new byte[1 * 1024 * 10];
-            while ((length = bis.read(temp)) != 1) {
+            while ((length = bis.read(temp)) != -1) {
                 bos.write(temp, 0, length);
             }
             bos.flush();

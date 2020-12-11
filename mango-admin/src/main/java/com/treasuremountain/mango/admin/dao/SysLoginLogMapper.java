@@ -1,5 +1,6 @@
 package com.treasuremountain.mango.admin.dao;
 
+import com.treasuremountain.mango.admin.model.SysLog;
 import com.treasuremountain.mango.admin.model.SysLoginLog;
 import com.treasuremountain.mango.admin.model.SysLoginLogExample;
 
@@ -34,4 +35,11 @@ public interface SysLoginLogMapper {
     int updateByPrimaryKeySelective(SysLoginLog record);
 
     int updateByPrimaryKey(SysLoginLog record);
+
+    List<SysLog> findPage();
+
+    List<SysLog> findPageByUserName(@Param(value = "userName") String userName);
+
+    List<SysLog> findPageByStatus(@Param(value = "status") String status);
+
 }

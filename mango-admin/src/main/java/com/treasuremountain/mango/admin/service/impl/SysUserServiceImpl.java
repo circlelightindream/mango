@@ -20,6 +20,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.util.*;
@@ -45,6 +46,7 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserMapper.findAll();
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public int save(SysUser record) {
         Long id = null;

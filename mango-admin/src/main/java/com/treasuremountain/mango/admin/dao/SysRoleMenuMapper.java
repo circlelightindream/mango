@@ -34,4 +34,11 @@ public interface SysRoleMenuMapper {
     int updateByPrimaryKeySelective(SysRoleMenu record);
 
     int updateByPrimaryKey(SysRoleMenu record);
+
+    List<SysRoleMenu> findRoleMenus(@Param(value = "roleId") Long roleId);
+
+    List<SysRoleMenu> findAll();
+
+    int deleteByRoleId(@Param(value = "roleId") Long roleId);
+
 }

@@ -2,6 +2,7 @@ package com.treasuremountain.mango.admin.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class SysDept implements Serializable {
     private Long id;
@@ -21,6 +22,15 @@ public class SysDept implements Serializable {
     private Date lastUpdateTime;
 
     private Byte delFlag;
+
+    // 非数据库字段
+    private List<SysDept> children;
+
+    // 非数据库字段
+    private String parentName;
+
+    // 非数据库字段
+    private Integer level;
 
     private static final long serialVersionUID = 1L;
 
@@ -94,6 +104,30 @@ public class SysDept implements Serializable {
 
     public void setDelFlag(Byte delFlag) {
         this.delFlag = delFlag;
+    }
+
+    public List<SysDept> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<SysDept> children) {
+        this.children = children;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     @Override
