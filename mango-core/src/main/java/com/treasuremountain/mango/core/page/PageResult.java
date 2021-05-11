@@ -5,9 +5,9 @@ import java.util.List;
 /**
  * 分页返回结果
  *
- * @author  mengyuanming
- * @date  2020/11/07 6:28
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/11/07 6:28
  */
 public class PageResult {
 

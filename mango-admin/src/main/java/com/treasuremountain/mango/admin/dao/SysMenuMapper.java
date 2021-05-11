@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * 菜单管理
  *
- * @author  mengyuanming
- * @date  2020/11/20 19:28
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/11/20 19:28
  */
 @Repository
 public interface SysMenuMapper {

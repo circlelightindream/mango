@@ -13,7 +13,8 @@ File Encoding         : 65001
 Date: 2019-01-22 14:49:38
 */
 
-SET FOREIGN_KEY_CHECKS = 0;
+SET
+FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for sys_config
@@ -21,7 +22,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `sys_config`;
 CREATE TABLE `sys_config`
 (
-    `id`               bigint(20)     NOT NULL AUTO_INCREMENT COMMENT '编号',
+    `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
     `value`            varchar(100)   NOT NULL COMMENT '数据值',
     `label`            varchar(100)   NOT NULL COMMENT '标签名',
     `type`             varchar(100)   NOT NULL COMMENT '类型',
@@ -32,7 +33,7 @@ CREATE TABLE `sys_config`
     `last_update_by`   varchar(50)  DEFAULT NULL COMMENT '更新人',
     `last_update_time` datetime     DEFAULT NULL COMMENT '更新时间',
     `remarks`          varchar(255) DEFAULT NULL COMMENT '备注信息',
-    `del_flag`         tinyint(4)   DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
+    `del_flag`         tinyint(4) DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 5
@@ -52,13 +53,13 @@ CREATE TABLE `sys_dept`
 (
     `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
     `name`             varchar(50) DEFAULT NULL COMMENT '机构名称',
-    `parent_id`        bigint(20)  DEFAULT NULL COMMENT '上级机构ID，一级机构为0',
-    `order_num`        int(11)     DEFAULT NULL COMMENT '排序',
+    `parent_id`        bigint(20) DEFAULT NULL COMMENT '上级机构ID，一级机构为0',
+    `order_num`        int(11) DEFAULT NULL COMMENT '排序',
     `create_by`        varchar(50) DEFAULT NULL COMMENT '创建人',
     `create_time`      datetime    DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50) DEFAULT NULL COMMENT '更新人',
     `last_update_time` datetime    DEFAULT NULL COMMENT '更新时间',
-    `del_flag`         tinyint(4)  DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
+    `del_flag`         tinyint(4) DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 36
@@ -102,7 +103,7 @@ VALUES ('14', '吴国', '3', '2', 'admin', '2018-09-23 19:41:04', null, null, '0
 DROP TABLE IF EXISTS `sys_dict`;
 CREATE TABLE `sys_dict`
 (
-    `id`               bigint(20)     NOT NULL AUTO_INCREMENT COMMENT '编号',
+    `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
     `value`            varchar(100)   NOT NULL COMMENT '数据值',
     `label`            varchar(100)   NOT NULL COMMENT '标签名',
     `type`             varchar(100)   NOT NULL COMMENT '类型',
@@ -113,7 +114,7 @@ CREATE TABLE `sys_dict`
     `last_update_by`   varchar(50)  DEFAULT NULL COMMENT '更新人',
     `last_update_time` datetime     DEFAULT NULL COMMENT '更新时间',
     `remarks`          varchar(255) DEFAULT NULL COMMENT '备注信息',
-    `del_flag`         tinyint(4)   DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
+    `del_flag`         tinyint(4) DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 5
@@ -353,17 +354,17 @@ CREATE TABLE `sys_menu`
 (
     `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
     `name`             varchar(50)  DEFAULT NULL COMMENT '菜单名称',
-    `parent_id`        bigint(20)   DEFAULT NULL COMMENT '父菜单ID，一级菜单为0',
+    `parent_id`        bigint(20) DEFAULT NULL COMMENT '父菜单ID，一级菜单为0',
     `url`              varchar(200) DEFAULT NULL COMMENT '菜单URL,类型：1.普通页面（如用户管理， /sys/user） 2.嵌套完整外部页面，以http(s)开头的链接 3.嵌套服务器页面，使用iframe:前缀+目标URL(如SQL监控， iframe:/druid/login.html, iframe:前缀会替换成服务器地址)',
     `perms`            varchar(500) DEFAULT NULL COMMENT '授权(多个用逗号分隔，如：sys:user:add,sys:user:edit)',
-    `type`             int(11)      DEFAULT NULL COMMENT '类型   0：目录   1：菜单   2：按钮',
+    `type`             int(11) DEFAULT NULL COMMENT '类型   0：目录   1：菜单   2：按钮',
     `icon`             varchar(50)  DEFAULT NULL COMMENT '菜单图标',
-    `order_num`        int(11)      DEFAULT NULL COMMENT '排序',
+    `order_num`        int(11) DEFAULT NULL COMMENT '排序',
     `create_by`        varchar(50)  DEFAULT NULL COMMENT '创建人',
     `create_time`      datetime     DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50)  DEFAULT NULL COMMENT '更新人',
     `last_update_time` datetime     DEFAULT NULL COMMENT '更新时间',
-    `del_flag`         tinyint(4)   DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
+    `del_flag`         tinyint(4) DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 57
@@ -508,7 +509,7 @@ CREATE TABLE `sys_role`
     `create_time`      datetime     DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50)  DEFAULT NULL COMMENT '更新人',
     `last_update_time` datetime     DEFAULT NULL COMMENT '更新时间',
-    `del_flag`         tinyint(4)   DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
+    `del_flag`         tinyint(4) DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 9
@@ -533,8 +534,8 @@ DROP TABLE IF EXISTS `sys_role_dept`;
 CREATE TABLE `sys_role_dept`
 (
     `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
-    `role_id`          bigint(20)  DEFAULT NULL COMMENT '角色ID',
-    `dept_id`          bigint(20)  DEFAULT NULL COMMENT '机构ID',
+    `role_id`          bigint(20) DEFAULT NULL COMMENT '角色ID',
+    `dept_id`          bigint(20) DEFAULT NULL COMMENT '机构ID',
     `create_by`        varchar(50) DEFAULT NULL COMMENT '创建人',
     `create_time`      datetime    DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50) DEFAULT NULL COMMENT '更新人',
@@ -561,8 +562,8 @@ DROP TABLE IF EXISTS `sys_role_menu`;
 CREATE TABLE `sys_role_menu`
 (
     `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
-    `role_id`          bigint(20)  DEFAULT NULL COMMENT '角色ID',
-    `menu_id`          bigint(20)  DEFAULT NULL COMMENT '菜单ID',
+    `role_id`          bigint(20) DEFAULT NULL COMMENT '角色ID',
+    `menu_id`          bigint(20) DEFAULT NULL COMMENT '菜单ID',
     `create_by`        varchar(50) DEFAULT NULL COMMENT '创建人',
     `create_time`      datetime    DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50) DEFAULT NULL COMMENT '更新人',
@@ -824,7 +825,7 @@ VALUES ('622', '4', '51', 'admin', '2019-01-22 14:46:44', null, null);
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user`
 (
-    `id`               bigint(20)  NOT NULL AUTO_INCREMENT COMMENT '编号',
+    `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
     `name`             varchar(50) NOT NULL COMMENT '用户名',
     `nick_name`        varchar(150) DEFAULT NULL COMMENT '昵称',
     `avatar`           varchar(150) DEFAULT NULL COMMENT '头像',
@@ -832,13 +833,13 @@ CREATE TABLE `sys_user`
     `salt`             varchar(40)  DEFAULT NULL COMMENT '加密盐',
     `email`            varchar(100) DEFAULT NULL COMMENT '邮箱',
     `mobile`           varchar(100) DEFAULT NULL COMMENT '手机号',
-    `status`           tinyint(4)   DEFAULT NULL COMMENT '状态  0：禁用   1：正常',
-    `dept_id`          bigint(20)   DEFAULT NULL COMMENT '机构ID',
+    `status`           tinyint(4) DEFAULT NULL COMMENT '状态  0：禁用   1：正常',
+    `dept_id`          bigint(20) DEFAULT NULL COMMENT '机构ID',
     `create_by`        varchar(50)  DEFAULT NULL COMMENT '创建人',
     `create_time`      datetime     DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50)  DEFAULT NULL COMMENT '更新人',
     `last_update_time` datetime     DEFAULT NULL COMMENT '更新时间',
-    `del_flag`         tinyint(4)   DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
+    `del_flag`         tinyint(4) DEFAULT '0' COMMENT '是否删除  -1：已删除  0：正常',
     PRIMARY KEY (`id`),
     UNIQUE KEY `name` (`name`)
 ) ENGINE = InnoDB
@@ -892,8 +893,8 @@ DROP TABLE IF EXISTS `sys_user_role`;
 CREATE TABLE `sys_user_role`
 (
     `id`               bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
-    `user_id`          bigint(20)  DEFAULT NULL COMMENT '用户ID',
-    `role_id`          bigint(20)  DEFAULT NULL COMMENT '角色ID',
+    `user_id`          bigint(20) DEFAULT NULL COMMENT '用户ID',
+    `role_id`          bigint(20) DEFAULT NULL COMMENT '角色ID',
     `create_by`        varchar(50) DEFAULT NULL COMMENT '创建人',
     `create_time`      datetime    DEFAULT NULL COMMENT '创建时间',
     `last_update_by`   varchar(50) DEFAULT NULL COMMENT '更新人',

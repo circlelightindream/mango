@@ -12,9 +12,9 @@ import org.springframework.stereotype.Repository;
 /**
  * 机构管理
  *
- * @author  mengyuanming
- * @date  2020/11/14 16:54
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/11/14 16:54
  */
 @Repository
 public interface SysDictMapper {
@@ -44,12 +44,14 @@ public interface SysDictMapper {
 
     /**
      * 分页查询
+     *
      * @return
      */
     List<SysDict> findPage();
 
     /**
      * 根据标签名称查询
+     *
      * @param label
      * @return
      */
@@ -57,6 +59,7 @@ public interface SysDictMapper {
 
     /**
      * 根据标签名称分页查询
+     *
      * @param label
      * @return
      */

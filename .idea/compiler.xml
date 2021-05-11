@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mango-backup" />
         <module name="mango-common" />
         <module name="mango-core" />
         <module name="mango-admin" />
@@ -14,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mango-admin" target="11" />
+      <module name="mango-backup" target="11" />
       <module name="mango-common" target="11" />
       <module name="mango-core" target="11" />
       <module name="mango-pom" target="11" />
@@ -22,6 +24,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mango-admin" options="-parameters" />
+      <module name="mango-backup" options="-parameters" />
       <module name="mango-common" options="-parameters" />
       <module name="mango-core" options="-parameters" />
       <module name="mango-pom" options="-parameters" />

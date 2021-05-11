@@ -3,9 +3,9 @@ package com.treasuremountain.mango.admin.constants;
 /**
  * 常量管理
  *
- * @author  mengyuanming
- * @date  2020/12/5 0005 4:00
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/12/5 0005 4:00
  */
 public interface SysContants {
 

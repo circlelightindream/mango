@@ -12,14 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 安全工具
  *
- * @author  mengyuanming
- * @date  2020/12/14 11:42
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/12/14 11:42
  */
 public class SecurityUtils {
 
     /**
      * 系统登录认证
+     *
      * @param request
      * @param username
      * @param password
@@ -45,6 +46,7 @@ public class SecurityUtils {
 
     /**
      * 获取令牌进行验证
+     *
      * @param request
      */
     public static void checkAuthentication(HttpServletRequest request) {
@@ -56,6 +58,7 @@ public class SecurityUtils {
 
     /**
      * 获取当前用户名
+     *
      * @return
      */
     public static String getUsername() {
@@ -72,6 +75,7 @@ public class SecurityUtils {
 
     /**
      * 获取用户名
+     *
      * @param authentication
      * @return
      */
@@ -88,6 +92,7 @@ public class SecurityUtils {
 
     /**
      * 获取当前登录信息
+     *
      * @return
      */
     public static Authentication getAuthentication() {

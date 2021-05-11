@@ -12,9 +12,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 /**
  * 身份验证提供者
  *
- * @author  mengyuanming
- * @date  2020/12/14 11:46
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/12/14 11:46
  */
 public class JwtAuthenticationProvider extends DaoAuthenticationProvider {
 

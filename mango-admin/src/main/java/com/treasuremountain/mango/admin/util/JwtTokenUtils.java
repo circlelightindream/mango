@@ -163,6 +163,7 @@ public class JwtTokenUtils implements Serializable {
 
     /**
      * 从令牌中获取数据声明
+     *
      * @param token
      * @return
      */
@@ -178,17 +179,19 @@ public class JwtTokenUtils implements Serializable {
 
     /**
      * 验证令牌
+     *
      * @param token
      * @param username
      * @return
      */
-    public static Boolean validateToken(String token,String username) {
+    public static Boolean validateToken(String token, String username) {
         String userName = getUsernameFromToken(token);
         return (userName.equals(username) && !isTokenExpired(token));
     }
 
     /**
      * 刷新令牌
+     *
      * @param token
      * @return
      */
@@ -206,6 +209,7 @@ public class JwtTokenUtils implements Serializable {
 
     /**
      * 判断令牌是否过期
+     *
      * @param token
      * @return
      */

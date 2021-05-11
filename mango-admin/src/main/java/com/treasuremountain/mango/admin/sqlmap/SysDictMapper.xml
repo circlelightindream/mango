@@ -345,7 +345,7 @@
     </select>
 
     <select id="findPageByLabel" parameterType="java.lang.String" resultMap="BaseResultMap">
-        <bind name="pattern" value="'%' + _parameter.label + '%'" />
+        <bind name="pattern" value="'%' + _parameter.label + '%'"/>
         select
         <include refid="Base_Column_List"/>
         from sys_dict

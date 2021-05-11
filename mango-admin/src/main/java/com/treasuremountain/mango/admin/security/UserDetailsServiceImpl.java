@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 /**
  * 用户登录认证信息查询
  *
- * @author  mengyuanming
- * @date  2021/04/05 20:27
+ * @author mengyuanming
  * @version 1.0
+ * @date 2021/04/05 20:27
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

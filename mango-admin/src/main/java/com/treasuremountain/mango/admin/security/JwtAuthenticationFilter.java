@@ -14,9 +14,9 @@ import java.io.IOException;
 /**
  * 登录认证过滤器
  *
- * @author  mengyuanming
- * @date  2020/12/14 11:37
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/12/14 11:37
  */
 public class JwtAuthenticationFilter extends BasicAuthenticationFilter {
 

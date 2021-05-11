@@ -19,9 +19,10 @@ import java.util.List;
 
 /**
  * 权限管理
- * @author  mengyuanming
- * @date  2020/12/10 0010 17:56
+ *
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/12/10 0010 17:56
  */
 @Service
 public class SysRoleServiceImpl implements SysRoleService {
@@ -110,6 +111,6 @@ public class SysRoleServiceImpl implements SysRoleService {
         if (label != null) {
             return MybatisPageHelper.findPage(pageRequest, sysRoleMapper, "findPageByName", label);
         }
-        return MybatisPageHelper.findPage(pageRequest,sysRoleMapper);
+        return MybatisPageHelper.findPage(pageRequest, sysRoleMapper);
     }
 }

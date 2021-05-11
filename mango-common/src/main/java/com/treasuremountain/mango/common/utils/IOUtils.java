@@ -5,14 +5,16 @@ import java.io.IOException;
 
 /**
  * IO相关工具
- * @author  mengyuanming
- * @date  2020/12/5 0005 8:22
+ *
+ * @author mengyuanming
  * @version 1.0
+ * @date 2020/12/5 0005 8:22
  */
 public class IOUtils {
 
     /**
      * 关闭对象，连接
+     *
      * @param closeable
      */
     public static void closeQuietly(final Closeable closeable) {
